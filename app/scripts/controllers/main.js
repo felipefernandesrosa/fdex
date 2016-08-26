@@ -9,22 +9,14 @@
  */
 angular.module('fdexApp')
     .controller('MainCtrl', function ($scope, realtyApiFactory, $localStorage,$sessionStorage) {
-        
-		$scope.$storage = $localStorage;
-		
-		$scope.result = [];
-		$localStorage.$default({
-			subject: []
-		});
+    
+		$scope.results = [];
 		
 		realtyApiFactory.getRealty().then(function successCallback(response) {
 			
-      console.log(response);
+      console.log(response.data);
+      $scope.results = response.data;
       
-//			$scope.result = response.data.result;
-//      $scope.subject = $localStorage.subject;
-      //console.log($scope.subject);
-			
 		}, function errorCallback(response) {
 			
 		});
@@ -33,7 +25,6 @@ angular.module('fdexApp')
 			realtyApiFactory.sendRealty(realty).then(function successCallback(response){
 				
         console.log(realty);
-				//$localStorage.subject.push(realty);
 				
 			}, function errorCallback(){
 			

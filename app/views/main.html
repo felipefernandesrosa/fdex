@@ -1,24 +1,19 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adicionar Imóvel</button>
-  
-<!--	<div class="col-xs-12 col-sm-4" ng-repeat="result in result">-->
-<!--      <div class="thumbnail">-->
-<!--        <div class="item {{result.id}}">-->
-<!--          <p>{{result.name}}</p>-->
-<!--          <!--<img ng-src="{{result.images[0].url}}" class="img-responsive" />-->
-<!--        </div>-->
-<!--      </div>-->
-<!--	</div>-->
-  
-  <div class="col-xs-12 col-sm-4" ng-repeat="subject in subject">
-      <div class="thumbnail">
-        <div class="item {{subject.id}}">
-          <p>{{subject.name}}</p>
-          <!--<img ng-src="{{result.images[0].url}}" class="img-responsive" />-->
-        </div>
-      </div>
-	</div>
+  <div class="row">
+    <h1>'Allo, 'Allo!</h1>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Adicionar Imóvel</button>
+    
+    <div class="col-xs-12 col-sm-4" ng-repeat="result in results">
+        <div class="thumbnail">
+            <div class="item {{result.id}}">
+              <img ng-src="{{result.image[0].url}}" alt="{{desc}}" class="thumb-image img-responsive" />
+              <p>{{result.name}}</p>
+              <p>R${{result.value}}</p>
+              <p>{{result.place[0].address}}</p>
+            </div>
+          </div>
+    </div>
+  </div>
   
 </div>
 
@@ -52,7 +47,7 @@
 				</div>
 				
 				<div class="form-group">
-					<input class="form-control" ng-model="realty.image.description" placeholder="Descrição da Imagem"/>
+					<input class="form-control" ng-model="realty.image.desc" placeholder="Descrição da Imagem"/>
 				</div>
 				
 				<div class="form-group">
