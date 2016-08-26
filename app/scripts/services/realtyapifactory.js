@@ -18,6 +18,6 @@ angular.module('fdexApp')
         
 				return $http.post("http://localhost:5000/api/realty",data);	
 			}
-		}  
+		};  
 	    
 	});
