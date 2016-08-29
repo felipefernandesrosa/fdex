@@ -25,6 +25,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/detail/:id', {
+        templateUrl: 'views/realtydetail.html',
+        controller: 'RealtydetailCtrl',
+        controllerAs: 'Realtydetail'
+      })
       .otherwise({
         redirectTo: '/'
       });

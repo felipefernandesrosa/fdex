@@ -8,26 +8,33 @@
  * Controller of the fdexAppApp
  */
 angular.module('fdexApp')
-    .controller('MainCtrl', function ($scope, realtyApiFactory, $localStorage,$sessionStorage) {
+    .controller('MainCtrl', function ($scope, realtyApiFactory) {
     
-		$scope.results = [];
-		
-		realtyApiFactory.getRealty().then(function successCallback(response) {
-			
-      console.log(response.data);
-      $scope.results = response.data;
-      
-		}, function errorCallback(response) {
-			
-		});
+    $scope.results = [];
+    
+    var loadRealty = function(){
+      realtyApiFactory.getRealties().then(function successCallback(response) {
+        console.log(response.data);
+        $scope.results = response.data;
         
-		$scope.addContact = function(realty){
-			realtyApiFactory.sendRealty(realty).then(function successCallback(response){
-				
-        console.log(realty);
-				
-			}, function errorCallback(){
-			
-			});
-		};
-    });
+      }, function errorCallback(response) {
+        
+      });
+    };
+    
+    $scope.addContact = function(realty){
+      realtyApiFactory.sendRealty(realty).then(function successCallback(response){
+        
+        delete $scope.realty;
+				$scope.realtyForm.$setPristine();
+        $('#myModal').modal('hide');
+        
+        loadRealty();
+        
+      }, function errorCallback(){
+      
+      });
+    };
+    
+    loadRealty();
+});

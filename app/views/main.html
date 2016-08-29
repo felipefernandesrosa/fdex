@@ -5,14 +5,16 @@
     <div class="realties col-xs-12 col-sm-6 col-md-4" ng-repeat="result in results">
       <div class="thumbnail">
           <div class="item {{result.id}}">
-            <div class="thumb-image">
-              <img ng-src="{{result.image[0].url}}" alt="{{desc}}" class="thumb-image img-responsive" />
-              <h3 class="price"><span class="label label-info">R${{result.value}}</span></h3>
-            </div>
-            <div class="text-center">
-              <h3>{{result.name}}</h3>
-              <p>{{result.place[0].address}}</p>
-            </div>
+            <a href="#/realty/detail/{{result.id}}">
+              <div class="thumb-image">
+                <img ng-src="{{result.image[0].url}}" alt="{{desc}}" class="thumb-image img-responsive" />
+                <h3 class="price"><span class="label label-info">R${{result.value}}</span></h3>
+              </div>
+              <div class="text-center texts">
+                <h3>{{result.name}}</h3>
+                <p>{{result.place[0].address}}</p>
+              </div>
+            </a>
           </div>
         </div>
     </div>
@@ -27,7 +29,7 @@
 			<h4 class="modal-title">Adicionar um imóvel</h4>
 		</div>
 		<div class="modal-body">
-			<form>
+			<form name="realtyForm">
 				<div class="form-group">
 					<input class="form-control" ng-model="realty.name" placeholder="Nome do Imóvel" />
 				</div>
@@ -44,20 +46,13 @@
 					</select>
 				</div>
 				
-				<div class="form-group">
-					<input class="form-control" ng-model="realty.image.url" placeholder="Url da Imagem"/>
-				</div>
-				
-				<div class="form-group">
-					<input class="form-control" ng-model="realty.image.desc" placeholder="Descrição da Imagem"/>
-				</div>
-				
         <div class="form-group">
-					<button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              Adicionar mais imagens
-          </button>
-				</div>
+          <input class="form-control" ng-model="realty.image.url" placeholder="Url da Imagem"/>
+        </div>
+        
+        <div class="form-group">
+          <input class="form-control" ng-model="realty.image.desc" placeholder="Descrição da Imagem"/>
+        </div>
         
 				<div class="form-group">
 					<input class="form-control" ng-model="realty.value" placeholder="Valor" />
@@ -73,8 +68,8 @@
 			</form>
 		</div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary" ng-click="addContact(realty);">Save changes</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+			<button type="button" class="btn btn-primary" ng-click="addContact(realty);">Adicionar</button>
 		</div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
