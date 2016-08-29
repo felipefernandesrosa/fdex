@@ -10,13 +10,9 @@
  */
 angular
   .module('fdexApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
+    'ngTouch',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'ngStorage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
