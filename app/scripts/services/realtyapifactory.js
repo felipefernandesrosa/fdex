@@ -12,13 +12,13 @@ angular.module('fdexApp')
 		//$http.defaults.headers.common['authentication'] = 'egeniusfounders2016';
 		return{
 			getRealties: function(){
-				return $http.get("http://localhost:5000/api/realty");
+				return $http.get("https://boiling-mountain-16510.herokuapp.com/api/realty");
 			},
       getRealty: function(id){
-        return $http.get("http://localhost:5000/api/realty/"+id);
+        return $http.get("https://boiling-mountain-16510.herokuapp.com/api/realty/"+id);
       },
 			sendRealty: function(data){
-				return $http.post("http://localhost:5000/api/realty",data);	
+				return $http.post("https://boiling-mountain-16510.herokuapp.com/api/realty",data);	
 			}
 		};  
 	    

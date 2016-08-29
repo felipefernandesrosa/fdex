@@ -12,7 +12,7 @@ angular
   .module('fdexApp', [
     'ngTouch',
     'ngRoute',
-    'ngSanitize',
+    'ngSanitize'
   ])
   .config(function ($routeProvider) {
     $routeProvider

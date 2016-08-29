@@ -14,7 +14,6 @@ angular.module('fdexApp')
     
     var loadRealty = function(){
       realtyApiFactory.getRealties().then(function successCallback(response) {
-        console.log(response.data);
         $scope.results = response.data;
         
       }, function errorCallback(response) {
