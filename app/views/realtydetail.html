@@ -8,10 +8,13 @@
       </div>
       
       <div class="col-sm-4">
-        
+        <h2>{{result.name}}</h2>
+        <h3 class="price"><span class="label label-info">R${{result.value}}</span></h3>
+        <p>{{result.place[0].address}}</p>
         <div class="description">
           <p ng-bind-html="description"></p>
         </div>
+        <p>Telefone: <span class="label label-default">{{result.contact}}</span></p>
         
       </div>
       

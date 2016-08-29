@@ -5,7 +5,7 @@
     <div class="realties col-xs-12 col-sm-6 col-md-4" ng-repeat="result in results">
       <div class="thumbnail">
           <div class="item {{result.id}}">
-            <a href="#/realty/detail/{{result.id}}">
+            <a href="#/detail/{{result.id}}">
               <div class="thumb-image">
                 <img ng-src="{{result.image[0].url}}" alt="{{desc}}" class="thumb-image img-responsive" />
                 <h3 class="price"><span class="label label-info">R${{result.value}}</span></h3>

@@ -10,6 +10,7 @@
 angular.module('fdexApp')
   .controller('RealtydetailCtrl', function ($scope, $routeParams, realtyApiFactory) {
     realtyApiFactory.getRealty($routeParams.id).then(function successCallback(response) {
+      
       $scope.result = response.data;
       $scope.description = response.data.description;
       
